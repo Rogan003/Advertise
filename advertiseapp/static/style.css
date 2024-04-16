@@ -1,0 +1,164 @@
+*{
+    scroll-behavior: smooth;
+}
+img{
+    width: 100%;
+    height: auto;
+}
+body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #ee003f;
+    color: rgba(255, 255, 255, 0.788);
+}
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+      monospace;
+}
+h1{
+    text-align: center;
+    font-size: 400%;
+}
+h2{
+    font-size: 250%;
+    text-decoration: underline;
+    padding: 3%;
+    text-align: center;
+}
+header{
+    margin-left: 15%;
+    margin-right: 10%;
+    padding: 3%;
+    padding-bottom: 5%;
+}
+header img{
+    width: 10%;
+}
+header div{
+    display: flex;
+    flex-direction: row;
+}
+header nav ul{
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+    margin-left: 10%;
+}
+header nav ul li{
+    list-style-type: none;
+    margin-right: 10%;
+    padding: 10%;
+    transition: color 0.8s;
+}
+header nav ul li:hover{
+    color: #5e1b5b;
+}
+.navplace{
+    color: #5e1b5b;
+    font-style: italic;
+}
+header nav ul a{
+    color: #c0aa3d;
+    text-decoration: none;
+    transition: color 0.8s;
+    margin-right: 20%;
+}
+header nav ul a:hover{
+    color: #e6dcac;
+}
+footer{
+    font-variant: small-caps;
+    background-color: rgba(70, 1, 1, 0.26);
+    padding: 2%;
+    padding-left: 25%;
+    padding-right: 25%;
+    text-align: left;
+}
+.G{
+    background-color: goldenrod;
+}
+.S{
+    background-color: silver;
+}
+.B{
+    background-color: #CD7F32;
+}
+.homediv{
+    margin-left: 15%;
+    margin-right: 15%;
+    display: flex;
+    flex-direction: row;
+    padding: 5%;
+    margin-bottom: 3%;
+    border-radius: 25%;
+    transition: background-color 0.8s, border 0.8s;
+}
+.homediv:hover{
+    background-color: crimson;
+    border:rgba(70, 1, 1, 0.26) solid 3px;
+}
+.homediv div{
+    display: flex;
+    align-items: center;
+    padding: 5%;
+}
+.homediv button{
+    background-color: #9e0606;
+    border-radius: 30%;
+    height: 50px;
+    width: 120px;
+    margin: 5%;
+    transition: color 1s;
+    transition: background-color 1.2s;
+}
+.homediv a{
+    text-decoration: none;
+    color:#f8f8f8;
+}
+.homediv button:hover{
+    background-color:black;
+    cursor: pointer;
+}
+
+input {
+    width: 100%;
+}
+input[type=submit]{
+    margin-left: 5%;
+    width: 15%;
+    height: 7%;
+}
+input[type=text]{
+    padding: 2%;
+}
+input[type=text]:focus {
+    border: 3px solid #555;
+}
+.postad{
+    padding: 3%;
+    margin-left: 3%;
+}
+.postad *{
+    padding: 5%;
+    margin: 3%;
+}
+.postad input[type=submit]{
+    width: auto;
+}
+.postad div{
+    display: flex;
+    flex-direction: row;
+}
+/*
+.feed .homediv div{
+    padding-top: 20%;
+}
+.homediv :last-child{
+    padding: 10%;
+}*/

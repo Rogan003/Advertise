@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Advertise! - About Us</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="{% static 'pics/logo.png' %}" alt="Logo">
+            <h1>Advertise!</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <a href = "/">
+                        <li>Home</li>
+                    </a>
+                    <a href = "/advertising">
+                        <li>Advertisements</li>
+                    </a>
+                    <a href = "/postad">
+                        <li>Post an ad</li>
+                    </a>
+                    <a href = "/aboutus" class = "navplace">
+                        <li>About us</li>
+                    </a>
+                    {% if user.is_authenticated%}
+                    <a href = "accounts/{{user.username}}">
+                        <li>Profile</li>
+                    </a>
+                    <a href="accounts/logout">
+                        <li>Logout</li>
+                    </a>
+                    {% else %}
+                    <a href="accounts/login">
+                        <li>Login</li>
+                    </a>
+                    <a href="accounts/register">
+                        <li>Register</li>
+                    </a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h2>Meet the people behind Advertise!</h2>
+    <div class = "homediv">
+        <div>
+            <p>
+                We are a group of high school students, who realised that average man should have a place where he can find insta pages that he wants to follow, because, even if we dont notice it, social networks like instagram can shape our life. Check this place out!
+            </p>
+        </div>
+        <div>
+            <button><a href="postad">Advertise</a></button>
+            <img src="{% static 'pics/IMG_7798.jpg' %}" alt="This is us">
+        </div>
+    </div>
+    <div class = "homediv">
+        <div>
+            You want to contact us? Write here: <a href="mailto: roganovic.veselin@jjzmaj.edu.rs" rel="noopener noreferrer" target = "_blank">roganovic.veselin@jjzmaj.edu.rs</a>
+        </div>
+        <div>
+            <p>You want to check out our social media?</p>
+            <p>Instagram: <a href = "https://www.instagram.com/veselin_roganovic/" rel="noopener noreferrer" target = "_blank">@veselin_roganovic</a></p>
+            <p>Facebook: <a href = "https://www.facebook.com/veselin.roganovic" rel="noopener noreferrer" target = "_blank">Veselin Roganovic</a></p>
+        </div>
+    </div>
+    <footer>
+        <!-- Dodati sve ovo plus jos neke okej stvari za footer(meni mozda, all rights reserved...) -->
+        Contact Info:
+        <br>
+        Instagram: <a href = "https://www.instagram.com/veselin_roganovic/" rel="noopener noreferrer" target = "_blank">@veselin_roganovic</a>
+        <br>
+        Facebook: <a href = "https://www.facebook.com/veselin.roganovic" rel="noopener noreferrer" target = "_blank">Veselin Roganovic</a>
+        <br>
+        Email: <a href="mailto: roganovic.veselin@jjzmaj.edu.rs" rel="noopener noreferrer" target = "_blank">roganovic.veselin@jjzmaj.edu.rs</a>
+        <br>
+        Phone: +381 65 57 30 724
+    </footer>
+</body>
+</html>

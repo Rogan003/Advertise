@@ -1,0 +1,111 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Advertise! - Advertisements</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="{% static 'pics/logo.png' %}" alt="Logo">
+            <h1>Advertise!</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <a href = "/">
+                        <li>Home</li>
+                    </a>
+                    <a href = "/advertising" class = "navplace">
+                        <li>Advertisements</li>
+                    </a>
+                    <a href = "/postad">
+                        <li>Post an ad</li>
+                    </a>
+                    <a href = "/aboutus">
+                        <li>About us</li>
+                    </a>
+                    {% if user.is_authenticated%}
+                    <a href = "accounts/{{user.username}}">
+                        <li>Profile</li>
+                    </a>
+                    <a href="accounts/logout">
+                        <li>Logout</li>
+                    </a>
+                    {% else %}
+                    <a href="accounts/login">
+                        <li>Login</li>
+                    </a>
+                    <a href="accounts/register">
+                        <li>Register</li>
+                    </a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h2>Advertisements</h2>
+    <div class = "homediv">
+        <form action="search" method = "get">
+            <div>
+                <p>Number of followers:</p>
+                <label for="min">Minimum: </label>
+                <input type="number" name = "min">
+                <label for="max">Maximum: </label>
+                <input type="number" name = "max">
+            </div>
+            <div>
+                <p>Type of the ad</p>
+                <input type="checkbox" id="normal" name="normal" value="normal">
+                <label for="normal">Normal</label>
+                <input type="checkbox" id="bronze" name="bronze" value="bronze">
+                <label for="bronze">Bronze</label>
+                <input type="checkbox" id="silver" name="silver" value="silver">
+                <label for="silver">Silver</label>
+                <input type="checkbox" id="gold" name="gold" value="gold">
+                <label for="gold">Gold</label>
+                <input type="checkbox" id="anytype" name="anytype" value="anytype">
+                <label for="anytype">Not important</label>
+            </div>
+            <div>
+                <input type="text" placeholder="Enter some keywords:" name='keywords'>
+            </div>
+            <input type="submit" value="Search">
+        </form>
+    </div>
+    <div class = "feed">
+        {% for ad in reklame %}
+        <div class = "homediv {{ad.posttype}}">
+            <div><img src="{{ad.picture.url}}" alt="Post picture"></div>
+            <div>
+                <p>
+                    <strong>@{{ad.username}}</strong>
+                    {{ad.description1}}
+                    <br>
+                    Likes : {{ad.likes}}
+                    Dislikes : {{ad.dislikes}}
+                </p>
+                <button><a href = "{{ad.id}}post">See more</a></button>
+            </div>
+        </div>
+        {% endfor %}
+    </div> 
+    <footer>
+        <!-- Dodati sve ovo plus jos neke okej stvari za footer(meni mozda, all rights reserved...) -->
+        Contact Info:
+        <br>
+        Instagram: <a href = "https://www.instagram.com/veselin_roganovic/" rel="noopener noreferrer" target = "_blank">@veselin_roganovic</a>
+        <br>
+        Facebook: <a href = "https://www.facebook.com/veselin.roganovic" rel="noopener noreferrer" target = "_blank">Veselin Roganovic</a>
+        <br>
+        Email: <a href="mailto: roganovic.veselin@jjzmaj.edu.rs" rel="noopener noreferrer" target = "_blank">roganovic.veselin@jjzmaj.edu.rs</a>
+        <br>
+        Phone: +381 65 57 30 724
+    </footer>
+</body>
+</html>

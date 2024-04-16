@@ -1,0 +1,1 @@
+Old Django practice project. Website for Advertising stuff.

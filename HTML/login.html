@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <title>Advertise! - Login</title>
+</head>
+<body>
+    <header>
+        <div>
+            <img src="{% static 'pics/logo.png' %}" alt="Logo">
+            <h1>Advertise!</h1>
+        </div>
+        <div>
+            <nav>
+                <ul>
+                    <a href = "/">
+                        <li>Home</li>
+                    </a>
+                    <a href = "/advertising">
+                        <li>Advertisements</li>
+                    </a>
+                    <a href = "/postad">
+                        <li>Post an ad</li>
+                    </a>
+                    <a href = "/aboutus">
+                        <li>About us</li>
+                    </a>
+                    {% if user.is_authenticated%}
+                    <li>Hello {{user.username}}!</li>
+                    <a href = "accounts/{{user.username}}">
+                        <li>Profile</li>
+                    </a>
+                    <a href="accounts/logout">
+                        <li>Logout</li>
+                    </a>
+                    {% else %}
+                    <a href="login" class = "navplace">
+                        <li>Login</li>
+                    </a>
+                    <a href="register">
+                        <li>Register</li>
+                    </a>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <h2>Login</h2>
+   <div class = "homediv">
+        <div class = "">
+            <form action="login" method="post" enctype = "multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+   </div>
+    <footer>
+        <!-- Dodati sve ovo plus jos neke okej stvari za footer(meni mozda, all rights reserved...) -->
+        Contact Info:
+        <br>
+        Instagram: <a href = "https://www.instagram.com/veselin_roganovic/" rel="noopener noreferrer" target = "_blank">@veselin_roganovic</a>
+        <br>
+        Facebook: <a href = "https://www.facebook.com/veselin.roganovic" rel="noopener noreferrer" target = "_blank">Veselin Roganovic</a>
+        <br>
+        Email: <a href="mailto: roganovic.veselin@jjzmaj.edu.rs" rel="noopener noreferrer" target = "_blank">roganovic.veselin@jjzmaj.edu.rs</a>
+        <br>
+        Phone: +381 65 57 30 724
+    </footer>
+</body>
+</html>
